@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search Refugees</title>
+		<link
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/styles.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="search.html">ReConnect</a>
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav mr-auto">
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="profile.html">Profile</a>
+						</li> -->
+						<li class="nav-item">
+							<a class="nav-link" href="search.html">Search</a>
+						</li>
+						<!-- Additional navigation items -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<h2>Search Refugees</h2>
+				<form id="searchForm">
+					<div class="form-group">
+						<label for="ageGroup">Age Group</label>
+						<select class="form-control" id="ageGroup">
+							<option value="">Select Age Group</option>
+							<option value="Young Adult">Young Adult</option>
+							<option value="Adult">Adult</option>
+							<option value="Senior">Senior</option>
+							<!-- Add more age groups as needed -->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="city">City</label>
+						<select class="form-control" id="city">
+							<option value="">Select City</option>
+							<option value="Berlin">Berlin</option>
+							<option value="Hamburg">Hamburg</option>
+							<option value="Munich">Munich</option>
+							<option value="Cologne">Cologne</option>
+							<option value="Frankfurt">Frankfurt</option>
+							<option value="Cologne">Stuttgart</option>
+							<option value="Cologne">Dusseldorf</option>
+							<option value="Cologne">Hannover</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="education">Education Level</label>
+						<select class="form-control" id="education">
+							<option value="">Select Education Level</option>
+							<option value="High School">High School</option>
+							<option value="Bachelor">Bachelor</option>
+							<option value="Master">Master</option>
+							<option value="PhD">PhD</option>
+							<option value="Vocational">Vocational</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Languages Spoken</label>
+						<div>
+							<input type="checkbox" id="englishCheckbox" value="English" />
+							<label for="English">English</label>
+						</div>
+						<div>
+							<input type="checkbox" id="germanCheckbox" value="German" />
+							<label for="Frensh">French</label>
+						</div>
+						<div>
+							<input type="checkbox" id="arabicCheckbox" value="Arabic" />
+							<label for="Arabic">Arabic</label>
+						</div>
+						<div>
+							<input type="checkbox" id="arabicCheckbox" value="Arabic" />
+							<label for="Spanish">Spanish</label>
+						</div>
+						<!-- Add more checkboxes for other languages -->
+					</div>
+					<button type="submit" class="btn btn-primary">Search</button>
+				</form>
+				<hr />
+				<h2>Refugees</h2>
+				<div id="refugeeCardsContainer">
+					<!-- Refugee cards will be dynamically loaded here -->
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p class="text-center">Reconnect: Refugee Assistance Platform &copy; 2024</p>
+		</footer>
+		<script src="../js/script.js"></script>
+	</body>
+</html>
