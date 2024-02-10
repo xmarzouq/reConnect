@@ -142,7 +142,6 @@ async function handleSearch(event) {
 	if (city) filters.city = city;
 	if (education) filters.education = education;
 	if (languages.length > 0) filters.languages = languages;
-	if (profession) filters.profession = profession;
 
 	const response = await fetch("http://127.0.0.1:3000/search", {
 		method: "POST",

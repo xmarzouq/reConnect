@@ -64,7 +64,7 @@ app.get("/refugees/:id", async (req, res) => {
 	}
 });
 app.post("/search", async (req, res) => {
-	const { ageGroup, city, education, languages, profession } = req.body;
+	const { ageGroup, city, education, languages } = req.body;
 	let query = supabase.from("refugees").select("*");
 
 	if (ageGroup) query = query.eq("age_group", ageGroup);
@@ -73,7 +73,7 @@ app.post("/search", async (req, res) => {
 	if (languages && languages.length > 0) {
 		query = query.contains("languages_spoken", languages);
 	}
-	if (profession) query = query.eq("profession", profession);
+	// if (profession) query = query.eq("profession", profession);
 
 	const { data, error } = await query;
 	if (error) {
