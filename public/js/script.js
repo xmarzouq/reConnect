@@ -22,6 +22,7 @@ async function handleLogin(event) {
 
 	if (data.success) {
 		// Redirect to search page
+		company = data;
 		window.location.href = "./search.html";
 	} else {
 		alert("Login failed: " + data.message);
@@ -101,8 +102,21 @@ async function loadRefugeeProfile() {
 }
 
 async function handleShowInterest(refugeeId) {
-	// Logic to show interest for the refugee with the specified ID
-	// You can implement this logic based on your requirements
+	const companyEmail = company.email;
+
+	const emailContent = `Company Email: ${companyEmail}\nRefugee ID: ${refugeeId}`;
+
+	// Send email to development team
+	await sendRequest("http://127.0.0.1:3000/send-email", "POST", {
+		to: "development-team@example.com",
+		subject: "Interest Shown by Company",
+		content: emailContent,
+	});
+
+	alert(
+		"Thank you for showing interest! The development team has been notified." +
+			`${companyEmail}`
+	);
 }
 
 if (window.location.pathname.includes("profile.html")) {
@@ -128,6 +142,7 @@ async function handleSearch(event) {
 	if (city) filters.city = city;
 	if (education) filters.education = education;
 	if (languages.length > 0) filters.languages = languages;
+	if (profession) filters.profession = profession;
 
 	const response = await fetch("http://127.0.0.1:3000/search", {
 		method: "POST",
